@@ -3,14 +3,11 @@ class LargestPalindromeProduct
   def answer
     # Your objective is to find the largest palindrome made from the product of two three-digit numbers.
     num = 999**2
-    while num > 0 do 
-      if palindrome?(num) && has_three_digit_factors?(num)
-        break
-      else 
-        num -= 1
-      end
+    loop do 
+      num -=1
+      break if palindrome?(num) && has_three_digit_factors?(num)
     end
-    num
+    num    
   end
 
   def has_three_digit_factors?(num)
